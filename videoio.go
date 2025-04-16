@@ -356,7 +356,6 @@ type VideoCapture struct {
 // VideoCaptureFile opens a VideoCapture from a file and prepares
 // to start capturing. It returns error if it fails to open the file stored in uri path.
 func VideoCaptureFile(uri string) (vc *VideoCapture, err error) {
-	fmt.Println("shit")
 	vc = &VideoCapture{p: C.VideoCapture_New()}
 
 	cURI := C.CString(uri)
