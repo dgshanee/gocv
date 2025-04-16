@@ -369,6 +369,10 @@ func VideoCaptureFile(uri string) (vc *VideoCapture, err error) {
 	return
 }
 
+func SayHi() {
+	fmt.Println("hello!")
+}
+
 // VideoCaptureFile opens a VideoCapture from a file and prepares
 // to start capturing. It returns error if it fails to open the file stored in uri path.
 func VideoCaptureFileWithAPI(uri string, apiPreference VideoCaptureAPI) (vc *VideoCapture, err error) {
