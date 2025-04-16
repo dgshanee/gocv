@@ -632,6 +632,7 @@ func (vw *VideoWriter) Write(img Mat) error {
 // number. Return VideoCapture created from video file, URL, or GStreamer
 // pipeline if v is a string.
 func OpenVideoCapture(v interface{}) (*VideoCapture, error) {
+	fmt.Println("shit")
 	switch vv := v.(type) {
 	case int:
 		return VideoCaptureDevice(vv)
