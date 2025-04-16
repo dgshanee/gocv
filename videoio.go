@@ -635,15 +635,18 @@ func (vw *VideoWriter) Write(img Mat) error {
 // number. Return VideoCapture created from video file, URL, or GStreamer
 // pipeline if v is a string.
 func OpenVideoCapture(v interface{}) (*VideoCapture, error) {
-	fmt.Println("shit")
+	fmt.Println("accessed OpenVideoCapture()")
 	switch vv := v.(type) {
 	case int:
 		return VideoCaptureDevice(vv)
 	case string:
+		fmt.Println("String accessed")
 		id, err := strconv.Atoi(vv)
 		if err == nil {
 			return VideoCaptureDevice(id)
 		}
+
+		fmt.Println("With file")
 		return VideoCaptureFile(vv)
 	default:
 		return nil, errors.New("argument must be int or string")
